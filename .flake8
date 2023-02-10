@@ -1,0 +1,63 @@
+# Flake8 Configuration
+# See: https://flake8.pycqa.org/en/latest/user/configuration.html
+#
+
+[flake8]
+
+# DAR401...Missing exception(s) in Raises section.
+# DAR402...Excess exception(s) in Raises section.
+#          Disabled due to false-positives and when re-raising descendant exceptions.
+#          See: https://github.com/terrencepreilly/darglint/issues/164
+# E203.....Whitespace before ':'.
+#          This triggers on false-positives with list slicing where the colon acts like a binary operator.
+#          See: https://www.python.org/dev/peps/pep-0008/#pet-peeves
+#          See: https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#slices
+# E501.....Line too long.
+#          Disabled in favor of flake8-bugbear's B950 check
+#          See: https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length
+# I201.....Missing newline between import groups.
+# SIM106...Handle error-cases first.
+#          Results in a lot of false positives.
+#          See: https://github.com/MartinThoma/flake8-simplify/issues/8
+# W503.....Line break occurred before a binary operator
+#          See: https://www.flake8rules.com/rules/W503
+ignore = DAR40, E203, E501, I201, SIM106, W503
+
+# A.....provided by flake8-builtins
+# B.....provided by flake8-bugbear
+# C.....provided by mccabe (complexity)
+# C4....provided by flake8-comprehensions
+# DAR...provided by darglint
+# E.....provided by pyflakes and flake8-eradicate (errors)
+# F.....provided by flake8 (fatal)
+# N.....provided by flake8-broken-line
+# I.....provided by flake8-isort (imports)
+# PIE...provided by flake8-pie (misc lints)
+# SIM...provided by flake8-simplify (simplify)
+# TC....provided by flake8-type-checking (type check)
+# W.....provided by pyflakes (warnings)
+select = A, B, C, C4, DAR, E, F, I, N, PIE, SIM, TC, TC1, W, B950
+
+exclude =
+    .idea,
+    .git,
+    .mypy_cache,
+    .pytest_cache,
+    __pycache__,
+    build,
+    dist,
+    *venv,
+    *wheel,
+    *egg*
+
+max_complexity = 10
+max_line_length = 120
+max_doc_length = 120
+show_source = True
+statistics = True
+application-import-names = sciguy
+
+# docstring_style is used by darglint
+# See: https://github.com/terrencepreilly/darglint
+strictness = full
+docstring_style = numpy

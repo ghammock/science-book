@@ -1,0 +1,37 @@
+---
+# yamllint configuration file.
+# See: https://yamllint.readthedocs.io/en/stable/configuration.html#extending-the-default-configuration
+
+extends: default
+
+ignore: |
+  .idea/
+  venv/
+  .venv/
+  **/build/
+
+rules:
+  document-end:
+    present: true
+    level: warning
+  document-start:
+    present: true
+    level: error
+  line-length:
+    max: 120
+    level: warning
+  truthy:
+    allowed-values:
+      - 'yes'
+      - 'no'
+      - 'true'
+      - 'false'
+      - 'True'
+      - 'False'
+    level: error
+
+yaml-files:
+  - '*.yaml'
+  - '*.yml'
+  - '.yamllint'
+...
