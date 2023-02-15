@@ -1,12 +1,12 @@
 r"""
 
-.. currentmodule:: sciguy.units
+.. currentmodule:: science_book.units
 
 ==========================================
-Units of Measurement (:mod:`sciguy.units`)
+Units of Measurement (:mod:`science_book.units`)
 ==========================================
 
-sciguy expressly endorses the SI unit system.  In this system, there are seven
+science_book expressly endorses the SI unit system.  In this system, there are seven
 standard units of measurement (which are derived using physical constants).  These
 seven base units and the quantity they measure are:
 
@@ -24,6 +24,10 @@ This module is influenced by SciPy_'s ability to make unit conversions in calcul
 Special thanks to those contributors.
 
 .. _SciPy: https://docs.scipy.org/doc/
+
+.. autosummary::
+   :toctree: generated/
+
 """
 
 

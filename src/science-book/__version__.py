@@ -18,4 +18,4 @@ if TYPE_CHECKING:
 # See: https://mypy.readthedocs.io/en/stable/error_code_list2.html#check-that-no-untyped-functions-are-called-no-untyped-call  # noqa
 get_version: Callable[[str], str] = metadata.version
 
-__version__ = get_version("sciguy")
+__version__ = get_version("science_book")

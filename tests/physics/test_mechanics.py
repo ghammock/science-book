@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from sciguy.physics.mechanics import calculate_freefall_time
+from science_book.physics.mechanics import calculate_freefall_time
 
 
 class TestFreeFall:

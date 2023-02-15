@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-#
-
 import os
 import re
 import sys
@@ -14,6 +7,14 @@ from datetime import date
 
 import sphinx_rtd_theme
 
+# Check Sphinx version
+# See: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-needs_sphinx
+import sphinx
+
+needs_sphinx = "4.0"
+
+if sphinx.__version__ < needs_sphinx:
+    raise RuntimeError(f"Sphinx {needs_sphinx} or newer required")
 
 # -- Path setup --------------------------------------------------------------
 
@@ -22,29 +23,19 @@ import sphinx_rtd_theme
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath("../../src"))
 
-# pyproject_path = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
-# with open(str(pyproject_path), "rb") as pyproject_file:
-#     pyproject = tomli.load(pyproject_file)
-# pyproject = pyproject.get("project", {})
-#
-# release = pyproject.get("version", "0.0.0")
-
-import sciguy  # noqa E402, Need to set the path first.
+import science_book  # noqa E402, Need to set the path first.
 
 # -- Project information -----------------------------------------------------
-# project = pyproject.get("name", "SciGuy")
-# authors_list = cast("list[str]", pyproject.get("authors", []))
-
-project = sciguy.__title__
-authors_list = sciguy.__author__
+project = science_book.__title__
+authors_list = science_book.__author__
 
 author = ", ".join(authors_list)
-release = sciguy.__version__
+release = science_book.__version__
 version = ".".join(release.split(".")[:3])
-copyright = f"2023-{date.today().year}, Gary Hammock"  # noqa A001
+copyright = f"{date.today().year}, Gary Hammock"  # noqa A001
 language = "en"
 
-print(f"{project} Version {version}")
+print(f"{project} (Version: {version})")
 
 # -- General configuration ---------------------------------------------------
 # :see: https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -59,23 +50,44 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
-    "sphinx_autodoc_typehints",
     "sphinx_rtd_theme",
 ]
-root_doc = "index"
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
-today_fmt = "%Y-%B-%d"
-add_module_names = False
-templates_path = ["_templates"]
-option_emphasise_placeholders = True
 source_suffix = [".rst"]
 source_encoding = "utf-8"
+root_doc = "index"
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+templates_path = ["_templates"]
+default_role = None
+today_fmt = "%Y-%B-%d"
+add_function_parentheses = False
+add_module_names = False
 pygments_style = "sphinx"
+option_emphasise_placeholders = True
+
+nitpicky = True
+nitpick_ignore = []
 
 # -- Options for HTML output -------------------------------------------------
 # :see: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_theme = "sphinx_rtd_theme"
+# html_static_path = ['_static']
+# html_logo = '_static/logo.svg'
+# html_favicon = '_static/favicon.ico'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_title = f"{project} v{version} Manual"
+html_domain_indices = False
+html_file_suffix = ".html"
+html_last_updated_fmt = "%Y-%m-%d"
+html_copy_source = False
+html_show_sourcelink = False
+
+html_context = {
+    "display_github": True,
+    "github_user": "ghammock",
+    "github_repo": "science_book",
+    "github_version": "dev",
+    "conf_py_path": "/docs/src/",
+}
 
 # For the Read the Docs theme,
 # :see: https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html
@@ -86,17 +98,9 @@ html_theme_options = {
     "style_external_links": True,
 }
 
-html_context = {
-    "display_github": True,
-    "github_user": "ghammock",
-    "github_repo": "sciguy",
-    "github_version": "dev",
-    "conf_py_path": "/docs/src/",
-}
-
-html_last_updated_fmt = "%Y-%m-%d"
-html_copy_source = False
-html_show_sourcelink = False
+# -- Options for HTML Help output --------------------------------------------
+# :see: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-help-output
+htmlhelp_basename = project
 
 # -- Options for LaTeX output ------------------------------------------------
 # :see: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
@@ -105,8 +109,8 @@ html_show_sourcelink = False
 latex_documents = [
     (
         "index",
-        "sciguy.tex",
-        "SciGuy Documentation",
+        "science_book.tex",
+        "Science-Book Documentation",
         re.sub(r"\s*,\s*", r" \\and ", author),
         "manual",
         True,
@@ -140,15 +144,18 @@ latex_toplevel_sectioning = None
 # :see: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#configuration
 autoclass_content = "both"  # Includes __init__ docstring in class documentation
 autodoc_default_options = {
+    "inherited-members": None,
     "members": True,
     "member-order": "alphabetical",
 }
-autodoc_typehints = "description"  # 'signature' (default), 'description', or 'none'
+autodoc_typehints = "none"  # 'signature' (default), 'description', or 'none'
 
 # -- Options for the AutoSectionLabel extension ------------------------------
 # :see: https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html
 autosectionlabel_prefix_document = True
 
+# -- Options for the AutoSectionLabel extension ------------------------------
+# :see: https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html
 autosummary_generate = True
 
 # -- Options for the ExtLinks extension --------------------------------------

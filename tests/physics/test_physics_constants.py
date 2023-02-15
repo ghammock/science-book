@@ -1,6 +1,6 @@
 import math
 
-from sciguy.physics.constants import (
+from science_book.physics.constants import (
     F,
     G,
     N_A,

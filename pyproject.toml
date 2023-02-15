@@ -6,7 +6,7 @@ requires = ["poetry-core>=1.1.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "sciguy"
+name = "science-book"
 version = "0.1.0"
 description = "A package to help everyday users with science calculations"
 authors = ["Gary Hammock <ghammock79@gmail.com>"]
@@ -31,7 +31,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 packages = [
-    { include = "sciguy", from = "src" }
+    { include = "science_book", from = "src" }
 ]
 include = [
     { path = "tests", format = "sdist" },
@@ -80,8 +80,6 @@ pytest-mock = "^3.10.0"
 sphinx = "^5.2.3"
 sphinx-autodoc-typehints = "^1.19.4"
 sphinx-rtd-theme = "^1.0.0"
-tomli = "^2.0.1"
-rstcheck = { version = "^6.1.1", extras = ["sphinx", "toml"] }
 
 # black configuration
 # See: https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html
@@ -111,7 +109,7 @@ exclude = '''
 [tool.coverage.run]
 branch = true
 command_line = "-m pytest"
-source = ["src/sciguy/*"]
+source = ["src/science_book/*"]
 omit = [
     "*/__init__.py",
     "*/tests/*",
@@ -142,7 +140,7 @@ directory = "tests/coverage/html"
 [tool.isort]
 atomic = true
 color_output = true
-known_first_party = ["sciguy"]
+known_first_party = ["science_book"]
 known_local_folder = ["tests"]
 known_third_party = []
 lines_after_imports = 2

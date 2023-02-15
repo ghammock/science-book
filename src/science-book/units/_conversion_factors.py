@@ -1,7 +1,7 @@
 import math
 
-from sciguy.physics.constants import atomic_mass as _atomic_mass
-from sciguy.physics.constants import speed_of_light, standard_gravity
+from science_book.physics.constants import atomic_mass as _atomic_mass
+from science_book.physics.constants import speed_of_light, standard_gravity
 
 ###########################################################
 # Time units (relative to second)

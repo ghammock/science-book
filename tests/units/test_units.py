@@ -1,6 +1,6 @@
 import math
 
-import sciguy.units as units
+import science_book.units as units
 
 
 class TestMassUnits:

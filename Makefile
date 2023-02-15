@@ -1,4 +1,4 @@
-# SciGuy Makefile
+# Science-Book Makefile
 #
 # Requires:
 #   GNU Make >= 4.2
@@ -12,7 +12,6 @@
 #   $ make dev-install
 #
 
-IMG	= sciguy
 SHELL := /bin/bash
 
 RED = "\\e[31m"
@@ -60,7 +59,7 @@ coverage:  ## Runs unit tests with code coverage
 ifeq ($(HAS_POETRY), 1)
 	@poetry run pytest \
 	    --junitxml junit.coverage.xml \
-	    --cov=sciguy \
+	    --cov=science_book \
 	    --cov-branch \
 	    --cov-report=html:tests/coverage/html \
     	--cov-report=xml:tests/coverage/coverage.xml \
@@ -160,7 +159,7 @@ publish: build  ## Publishes the build artifacts to the artifactory
 sast-scan:  ## Run Static Application Security Testing (SAST) scans on the source code
 ifeq ($(HAS_POETRY), 1)
 	@echo -e "$(GREEN)Performing SAST Scan...$(RESET)"
-	@poetry run bandit --recursive --skip B101 src/sciguy/ \
+	@poetry run bandit --recursive --skip B101 src/science_book/ \
 	  && echo -e "$(GREEN)No security concerns detected.$(RESET)" \
 	  || (echo -e "$(RED)Scans detected potential vulnerabilities.$(RESET)"; false)
 else

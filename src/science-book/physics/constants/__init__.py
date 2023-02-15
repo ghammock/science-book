@@ -1,8 +1,8 @@
 r"""
-.. currentmodule:: sciguy.physics.constants
+.. currentmodule:: science_book.physics.constants
 
 ====================================================
-Physical Constants (:mod:`sciguy.physics.constants`)
+Physical Constants (:mod:`science_book.physics.constants`)
 ====================================================
 
 Value-Defined Constants
@@ -46,7 +46,7 @@ Example
 
 Calculating the mass of Earth
 
->>> from sciguy.physics.constants import gravitational_constant, standard_gravity
+>>> from science_book.physics.constants import gravitational_constant, standard_gravity
 >>>
 >>> radius_of_earth = 6.378e6  # meters
 >>> mass_of_earth = radius_of_earth**2 * standard_gravity / gravitational_constant
@@ -95,7 +95,7 @@ Example
 
 Calculating the heat flux from the sun:
 
->>> from sciguy.physics.constants import stefan_boltzmann
+>>> from science_book.physics.constants import stefan_boltzmann
 >>>
 >>> temperature_sun = 5800  # kelvin
 >>> heat_flux = stefan_boltzmann * temperature_sun**4  # W/m**2

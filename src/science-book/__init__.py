@@ -1,5 +1,5 @@
 """
-SciGuy
+Science-Book
 ======
 
 An open-source, freely-available package to help everyday users with science
@@ -8,13 +8,13 @@ calculations.
 
 import sys
 
-from sciguy.__version__ import __version__
+from science_book.__version__ import __version__
 
 
 if sys.version_info < (3, 8):
-    raise ImportError("The sciguy package does not support Python 3.7 or older.")
+    raise ImportError("The science-book package does not support Python 3.7 or older.")
 
-__title__ = "sciguy"
+__title__ = "science-book"
 __summary__ = "A package to help everyday users with science calculations"
 __author__ = "Gary Hammock <ghammock79@gmail.com>"
 __copyright__ = "Copyright © 2023, Gary Hammock"

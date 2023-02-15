@@ -2,7 +2,7 @@
 
 import math
 
-from sciguy.physics.constants import g_0
+from science_book.physics.constants import g_0
 
 
 def calculate_freefall_time(initial_height: float, gravity: float = g_0) -> float:
@@ -16,7 +16,7 @@ def calculate_freefall_time(initial_height: float, gravity: float = g_0) -> floa
     initial_height : float
         The height above the surface (in meters) from which the object is dropped.
 
-    gravity : float, default=sciguy.physics.constants.g_0
+    gravity : float, default = :data:`science_book.physics.constants.g_0`
         The gravitational acceleration toward the surface in m/s²
 
     Returns

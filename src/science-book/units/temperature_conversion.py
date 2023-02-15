@@ -2,7 +2,7 @@
 
 from typing import Union
 
-from sciguy.units import zero_celsius
+from science_book.units import zero_celsius
 
 
 __all__ = [

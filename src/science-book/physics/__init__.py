@@ -1,12 +1,12 @@
 r"""
-.. currentmodule:: sciguy.physics
+.. currentmodule:: science_book.physics
 
 ==========================================
-The Physics Module (:mod:`sciguy.physics`)
+The Physics Module (:mod:`science_book.physics`)
 ==========================================
 
 This module is used for physics calculations.  It includes physical constants (the
-:mod:`~sciguy.physics.constants` module) and functions to calculate phenomena such as
+:mod:`~science_book.physics.constants` module) and functions to calculate phenomena such as
 freefall, projectile motion, etc.
 
 .. toctree::
@@ -18,7 +18,7 @@ freefall, projectile motion, etc.
     mechanics
 """
 
-from sciguy.physics import constants, mechanics
+from science_book.physics import constants, mechanics
 
 __all__ = [
     "constants",
