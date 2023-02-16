@@ -37,7 +37,7 @@ These constants are defined expressly by value.  Most of them are defined by the
 ``atomic_mass``              atomic mass constant :math:`m_u`, kg
 ``N_A``                      Avogadro constant :math:`N_A`, mol⁻¹
 ``Avogadro``                 Avogadro constant :math:`N_A`, mol⁻¹
-``g_0``                      standard Earth gravity, m/s²
+``g``                        standard Earth gravity, m/s²
 ``standard_gravity``         standard Earth gravity, m/s²
 ===========================  ===================================================================================
 

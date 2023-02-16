@@ -36,7 +36,7 @@ __all__ = [
     "faraday",
     "fine_structure",
     "first_rad_constant",
-    "g_0",
+    "g",
     "gas_constant",
     "gravitational_constant",
     "h",
@@ -153,7 +153,7 @@ The proportionality constant relating molar mass of a compound to the mass of a 
 This is an exact value using the 2019 redefinition of SI base units.
 """
 
-g_0 = standard_gravity = 9.806_65
+g = standard_gravity = 9.806_65
 """standard Earth gravity, m/s²
 
 The nominal acceleration of an object due to gravity, in a vacuum, near the surface
