@@ -15,7 +15,7 @@ license = "mit"
 readme = "README.md"
 homepage = "https://github.com/ghammock/science-book"
 repository = "https://github.com/ghammock/science-book"
-documentation = "https://github.com/ghammock/science-book/"
+documentation = "https://github.com/ghammock/science-book/docs"
 keywords = [
     "science",
     "physics",
@@ -41,9 +41,9 @@ include = [
 ]
 
 [tool.poetry.urls]
-changelog = "https://github.com/"
-download = "https://github.com/"
-issues = "https://github.com/"
+changelog = "https://github.com/ghammock/science-book/blob/main/CHANGELOG.md"
+download = "https://github.com/ghammock/science-book/releases"
+issues = "https://github.com/ghammock/science-book/issues"
 
 [tool.poetry.dependencies]
 python = "^3.8"
