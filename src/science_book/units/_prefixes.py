@@ -1,3 +1,14 @@
+"""
+References
+----------
+
+.. [1] “Metric prefix,” *Wikipedia*, 18-Jan-2023. [Online]. Available: https://en.wikipedia.org/wiki/Metric_prefix.
+  [Accessed: 10-Feb-2023].
+
+.. [2] D. Halliday, R. Resnick, and J. Walker, *Fundamentals of Physics*, 6th ed.
+       New York, NY: Wiley, 2001. ISBN: 9780471320005
+"""
+
 ###########################################################
 # SI Prefixes
 # See: https://en.wikipedia.org/wiki/Metric_prefix

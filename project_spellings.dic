@@ -4,6 +4,7 @@ arcsec
 arcsecond
 autosectionlabel
 autosummary
+currentmodule
 deka
 extlinks
 exbi
@@ -20,6 +21,7 @@ pebi
 quecto
 sourcelink
 tebi
+toctree
 varepsilon
 viewcode
 wavenumber
