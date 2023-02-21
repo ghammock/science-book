@@ -206,6 +206,32 @@ def calculate_velocity(initial_velocity: float, constant_acceleration: float, du
     return initial_velocity + (constant_acceleration * duration)
 
 
+def calculate_average_velocity(initial_velocity: float, constant_acceleration: float, duration: float) -> float:
+    r"""Calculates the average velocity of an object undergoing constant acceleration
+
+    Parameters
+    ----------
+    initial_velocity : float
+        The velocity at the start of the duration interval in m/s.
+    constant_acceleration : float
+        The acceleration, in m/s², constantly applied over the duration.
+    duration : float
+        The duration, in seconds, over which the acceleration is applied.
+
+    Returns
+    -------
+    float
+        The average velocity (:math:`\bar{v}`), in m/s, of the object over the time
+        interval.
+
+    References
+    ----------
+    - D. Halliday, R. Resnick, and J. Walker, *Fundamentals of Physics*, 6th ed.
+      New York, NY: Wiley, 2001. ISBN: 9780471320005
+    """
+    return initial_velocity + (0.5 * constant_acceleration * duration)
+
+
 def calculate_displacement(initial_velocity: float, constant_acceleration: float, duration: float) -> float:
     r"""Calculates the amount of displacement (travel) of an object under constant acceleration
 
